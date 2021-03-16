@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace Rocky.Models
 {
-    public class Category
+    public class Character
     {
         [Key]
         public int Id { get; set; }
+        [DisplayName("Character Name")]
         public string Name { get; set; }
-        [DisplayName("Display Order")]
-        public int DisplayOrder { get; set; }
     }
 }
