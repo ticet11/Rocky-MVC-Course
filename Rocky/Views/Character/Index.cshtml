@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Rocky.Models.Character>
+
+<div class="container p-3">
+    <div class="row pt-4" style="margin-bottom: 15px;">
+        <div class="col-6">
+            <h2 class="text-primary">Character List</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-controller="Character" asp-action="Create" class="btn btn-primary">
+                Create New Character
+            </a>
+        </div>
+    </div>
+
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>
+                        Character Name
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var obj in Model)
+                {
+                    <tr>
+                        <td width="50%">
+                            @obj.Name
+                        </td>
+                        <td></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>
+            No Character exists.
+        </p>
+    }
+</div>
+

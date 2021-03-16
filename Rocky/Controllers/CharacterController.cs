@@ -22,5 +22,21 @@ namespace Rocky.Controllers
             IEnumerable<Character> objList = _db.Character;
             return View(objList);
         }
+
+        // GET for Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST for Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Character obj)
+        {
+            _db.Character.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
