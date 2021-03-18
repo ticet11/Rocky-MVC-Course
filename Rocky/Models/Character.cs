@@ -12,6 +12,7 @@ namespace Rocky.Models
         [Key]
         public int Id { get; set; }
         [DisplayName("Character Name")]
+        [Required]
         public string Name { get; set; }
     }
 }
